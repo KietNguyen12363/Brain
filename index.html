@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bộ Não Bạn Chạy Hệ Điều Hành Nào?</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="quiz-card">
+    
+    <!-- TRANG TIÊU ĐỀ (WELCOME SCREEN) -->
+    <div id="welcome-box" class="welcome-box">
+      <span class="welcome-icon">🧠💻</span>
+      <h1>Bộ Não Bạn Đang Chạy Hệ Điều Hành Nào?</h1>
+      <p>Khám phá xem cấu trúc tư duy, cách xử lý vấn đề và phong cách sống của bạn giống hệ điều hành nào nhất trong thế giới công nghệ!</p>
+      <button id="start-btn" class="start-btn">Bắt Đầu Khảo Sát</button>
+    </div>
+
+    <!-- KHUNG LÀM BÀI KHẢO SÁT -->
+    <div id="quiz-container" style="display: none;">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+      
+      <div class="question-count" id="q-count">Câu hỏi 1 / 10</div>
+
+      <div id="question-box">
+        <h2 id="q-title">Đang tải câu hỏi...</h2>
+        <div id="options-container"></div>
+      </div>
+    </div>
+
+    <!-- 🌟 KHUNG KẾT QUẢ VỚI BỐ CỤC 2 CỘT -->
+    <div id="result-box" class="result-box">
+      <h3>💻 Hệ Điều Hành Bộ Não Của Bạn Là:</h3>
+
+      <div class="result-content-layout">
+        <!-- Cột bên trái: Tên & mô tả hệ điều hành -->
+        <div class="result-left">
+          <span id="os-badge" class="os-badge"></span>
+          <p id="os-desc" class="os-desc"></p>
+        </div>
+
+        <!-- Cột bên phải: Ảnh Hệ Điều Hành -->
+        <div class="result-right">
+          <img id="os-image" src="" alt="OS Logo" class="os-img">
+        </div>
+      </div>
+
+      <!-- BẢNG THỐNG KÊ CÂU HỎI ĐÃ CHỌN -->
+      <div class="summary-section">
+        <h4>📋 Bảng Thống Kê Hành Vi Tư Duy Của Bạn:</h4>
+        <div class="table-responsive">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Câu hỏi</th>
+                <th>Lựa chọn của bạn</th>
+                <th>Hệ điều hành tương ứng</th>
+              </tr>
+            </thead>
+            <tbody id="summary-tbody">
+              <!-- Dữ liệu được render từ JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button class="restart-btn" onclick="location.reload()">Kiểm Tra Lại</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
